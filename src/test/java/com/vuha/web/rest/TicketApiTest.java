@@ -79,22 +79,10 @@ public class TicketApiTest {
         testcaseList.add(tc3);
 
         Map<String, String> tc4 = new HashMap<>();
-        tc4.put("field", "created_at");
-        tc4.put("keyword", "2016-04-28T11:19:34 -10:00");
+        tc4.put("field", "subject");
+        tc4.put("keyword", "A Catastrophe in Korea (North)");
         tc4.put("expect", "436bf9b0-1147-4c0a-8439-6f79833bff5b");
         testcaseList.add(tc4);
-
-        Map<String, String> tc5 = new HashMap<>();
-        tc5.put("field", "subject");
-        tc5.put("keyword", "A Catastrophe in Korea (North)");
-        tc5.put("expect", "436bf9b0-1147-4c0a-8439-6f79833bff5b");
-        testcaseList.add(tc5);
-
-        Map<String, String> tc6 = new HashMap<>();
-        tc6.put("field", "due_at");
-        tc6.put("keyword", "2016-07-31T02:37:50 -10:00");
-        tc6.put("expect", "436bf9b0-1147-4c0a-8439-6f79833bff5b");
-        testcaseList.add(tc6);
 
         for (Map<String, String> testcase : testcaseList) {
             String field = testcase.get("field");
@@ -109,6 +97,9 @@ public class TicketApiTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(jsonPath("$").isArray())
+                .andExpect(jsonPath("$[0].organization_name").exists())
+                .andExpect(jsonPath("$[0].assignee_name").exists())
+                .andExpect(jsonPath("$[0].submitter_name").exists())
                 .andExpect(jsonPath("$[0]._id").value(expect));
         }
     }
