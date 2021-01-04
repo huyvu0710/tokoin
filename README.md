@@ -14,8 +14,11 @@ Write a simple command line application to search the data and return the result
 - Search can get pretty complicated pretty easily, we just want to see that you can code a basic search application.
 
 ## Introduction
+
 A website code challenge from Tokoin.
+
 Frontend: Angular
+
 Backend: Java, use Spring Boot framework
 
 ## Development
