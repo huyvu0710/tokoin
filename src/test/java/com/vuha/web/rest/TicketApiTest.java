@@ -109,9 +109,6 @@ public class TicketApiTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(jsonPath("$").isArray())
-                .andExpect(jsonPath("$[0].organization_name").exists())
-                .andExpect(jsonPath("$[0].assignee_name").exists())
-                .andExpect(jsonPath("$[0].submitter_name").exists())
                 .andExpect(jsonPath("$[0]._id").value(expect));
         }
     }
