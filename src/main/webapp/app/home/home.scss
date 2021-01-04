@@ -1,0 +1,41 @@
+/* ==========================================================================
+Main page styles
+========================================================================== */
+
+.v-link {
+  text-decoration: none;
+}
+
+.v-box {
+  min-height: 150px;
+  width: 100%;
+  background: #f2c2a0;
+  color: #a3634d;
+  text-align: center;
+  font-weight: 600;
+  padding-top: 60px;
+
+  &:hover {
+    background: #a8d4ff;
+  }
+}
+
+.hipster {
+  display: inline-block;
+  width: 347px;
+  height: 497px;
+  background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
+  background-size: contain;
+}
+
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (-moz-min-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+  .hipster {
+    background: url('../../content/images/jhipster_family_member_0.svg') no-repeat center top;
+    background-size: contain;
+  }
+}

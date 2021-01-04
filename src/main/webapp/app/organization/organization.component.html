@@ -1,0 +1,58 @@
+<div class="tn-manage-div">
+    <h2 id="page-heading">
+        <span>Organization</span>
+    </h2>
+    <br/>
+    <div class="v-search">
+        <form class="form" role="form" (ngSubmit)="search()" [formGroup]="editForm">
+            <div class="row">
+                <div class="col-md-3 form-group">
+                    <label for="field">Field</label>
+                    <select id="field" class="form-control" formControlName="field">
+                        <option *ngFor="let item of fields" [value]="item">{{item}}</option>
+                    </select>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="keyword">Keyword</label>
+                    <input id="keyword" type="text" class="form-control"
+                           formControlName="keyword" />
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary" style="height: 80%">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="alert alert-warning" *ngIf="organizations?.length === 0">
+        <span>No news found</span>
+    </div>
+    <div class="table-responsive" *ngIf="organizations?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort>
+                <th><span>ID</span></th>
+                <th><span>Name</span></th>
+                <th><span>Url</span></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of organizations ;trackBy: trackId">
+                <td><a [routerLink]="['/organization', item._id, 'view' ]">{{item._id}}</a></td>
+                <td>{{item.name}}</td>
+                <td>{{item.url}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['./', item._id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View Detail</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

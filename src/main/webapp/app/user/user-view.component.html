@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-md-12">
+        <h4>User with ID = {{ user._id }}</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <pre>
+            name: {{ user.name }}
+            alias: {{ user.alias }}
+            url: {{ user.url }}
+            external_id: {{ user.external_id }}
+            created_at: {{ user.created_at }}
+            active: {{ user.active }}
+            verified: {{ user.verified }}
+            shared: {{ user.shared }}
+            locale: {{ user.locale }}
+            timezone: {{ user.timezone }}
+            last_login_at: {{ user.last_login_at }}
+            email: {{ user.email }}
+            phone: {{ user.phone }}
+            signature: {{ user.signature }}
+            organization_id: {{ user.organization_id }}
+            organization_name: {{ user.organization_name }}
+            tags: {{ user.tags }}
+            suspended: {{ user.suspended }}
+            role: {{ user.role }}
+            assignee_ticket_subjects: {{ user.assignee_ticket_subjects }}
+            submitted_ticket_subjects: {{ user.submitted_ticket_subjects }}
+        </pre>
+    </div>
+    <div class="col-md-12">
+        <button type="button" class="btn btn-secondary" (click)="previousState()">
+            <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+    </div>
+</div>

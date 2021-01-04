@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-12">
+        <h4>Ticket with ID = {{ ticket._id }}</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <pre>
+            subject: {{ ticket.subject }}
+            url: {{ ticket.url }}
+            external_id: {{ ticket.external_id }}
+            created_at: {{ ticket.created_at }}
+            type: {{ ticket.type }}
+            description: {{ ticket.description }}
+            priority: {{ ticket.priority }}
+            status: {{ ticket.status }}
+            submitter_id: {{ ticket.submitter_id }}
+            assignee_id: {{ ticket.assignee_id }}
+            organization_id: {{ ticket.organization_id }}
+            tags: {{ ticket.tags }}
+            has_incidents: {{ ticket.has_incidents }}
+            due_at: {{ ticket.due_at }}
+            via: {{ ticket.via }}
+            organization_name: {{ ticket.organization_name }}
+            assignee_name: {{ ticket.assignee_name }}
+            submitter_name: {{ ticket.submitter_name }}
+        </pre>
+    </div>
+    <div class="col-md-12">
+        <button type="button" class="btn btn-secondary" (click)="previousState()">
+            <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+    </div>
+</div>
