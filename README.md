@@ -18,8 +18,11 @@ Write a simple command line application to search the data and return the result
 [![ava.png](https://i.postimg.cc/Rhw6PQLB/ava.png)](https://postimg.cc/8fPzcvYK)
 
 A website code challenge from Tokoin.
+
 Frontend: Angular
+
 Backend: Java, use Spring Boot framework
+
 Platform: JHipster
 
 ## Development
